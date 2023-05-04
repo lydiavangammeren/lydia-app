@@ -1,14 +1,14 @@
 import React from "react";
 
 const Counter = (props) => {
-  const { counter, onDelete, onIncrement, onDecrement } = props;
+  const { counter, onDelete, onIncrement} = props;
   return (
     <div>
       <h1>Counter {counter.id}</h1>
       <span className={getBadgeClasses()}>{formatCount()}</span>
       <button
         onClick={() => {
-          onIncrement(counter);
+          onIncrement(counter, "plus");
         }}
         className="btn btn-dark btn-sm m-1"
       >
@@ -16,7 +16,7 @@ const Counter = (props) => {
       </button>
       <button
         onClick={() => {
-          onDecrement(counter);
+          onIncrement(counter, "min");
         }}
         className="btn btn-secondary btn-sm m-1"
       >

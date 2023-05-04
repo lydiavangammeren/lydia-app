@@ -11,20 +11,16 @@ function App() {
     { id: 4, value: 1 },
   ]);
 
-  const handleIncrement = (counter) => {
+  const handleIncrement = (counter, calculation) => {
     const countersArray = [...counters];
     const index = countersArray.indexOf(counter);
     countersArray[index] = { ...counter };
-    countersArray[index].value++;
-    setCounters(countersArray);
-  };
-
-  const handleDecrement = (counter) => {
-    const countersArray = [...counters];
-    const index = countersArray.indexOf(counter);
-    countersArray[index] = { ...counter };
-    if (countersArray[index].value > 0) {
-      countersArray[index].value--;
+    if (calculation === "plus") {
+      countersArray[index].value++;
+    } else {
+      if (countersArray[index].value > 0) {
+        countersArray[index].value--;
+      }
     }
     setCounters(countersArray);
   };
@@ -43,8 +39,7 @@ function App() {
         <Counters
           counters={counters}
           onReset={handleReset}
-          onIncrement={handleIncrement}
-          onDecrement={handleDecrement}
+          onIncrement={handleIncrement}          
           onDelete={handleDelete}
         />
       </main>
