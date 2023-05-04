@@ -1,11 +1,19 @@
-import React from 'react';
+import React from "react";
 
-const NavBar = () => {
-    return ( <nav className ="navbar navbar-light bg-light">
-    <div className ="container-fluid">
-      <a className ="navbar-brand" href="/">Navbar</a>
-    </div>
-  </nav> );
-}
+const NavBar = (props) => {
+  const { totalCounters } = props;
+  return (
+    <nav className="navbar navbar-light bg-light">
+      <div className="container-fluid">
+        <a className="navbar-brand" href="/">
+          Navbar{" "}
+          <span className="span badge badge-pill badge-secondary">
+            {totalCounters}
+          </span>
+        </a>
+      </div>
+    </nav>
+  );
+};
 
 export default NavBar;
