@@ -11,7 +11,7 @@ function App() {
     { id: 4, value: 1 },
   ]);
 
-  const handleIncrement = (counter, calculation) => {
+  const handleCalculation = (counter, calculation) => {
     const countersArray = [...counters];
     const index = countersArray.indexOf(counter);
     countersArray[index] = { ...counter };
@@ -39,7 +39,7 @@ function App() {
         <Counters
           counters={counters}
           onReset={handleReset}
-          onIncrement={handleIncrement}          
+          onCalculation={handleCalculation}          
           onDelete={handleDelete}
         />
       </main>

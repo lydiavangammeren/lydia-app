@@ -3,7 +3,7 @@ import Counter from "./counter";
 
 const Counters = (props) => {
 
-  const {counters, onReset, onIncrement, onDelete} = props;
+  const {counters, onReset, onCalculation, onDelete} = props;
   return (
     <>
       <button onClick={onReset} className="btn btn-primary btn-sm m-2">
@@ -11,7 +11,7 @@ const Counters = (props) => {
       </button>
       {counters.map((counter) => (
         <Counter
-          onIncrement={onIncrement}
+          onCalculation={onCalculation}
           onDelete={onDelete}
           key={counter.id}
           counter={counter}
